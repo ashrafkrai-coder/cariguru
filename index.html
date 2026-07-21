@@ -574,12 +574,16 @@ function searchGuru() {
   const el = document.getElementById('result-guru');
 
   if (query.length < 2) {
-    el.innerHTML = '<div class="prompt-state"><div class="emoji">👩‍🏫</div><p>Taip nama guru untuk cari<br>semua kelas & waktu yang diajar.</p></div>';
+    const filterText = selectedKelas ? ` untuk kelas <strong>${selectedKelas}</strong>` : '';
+    el.innerHTML = `<div class="prompt-state"><div class="emoji">👩‍🏫</div><p>Taip nama guru untuk cari${filterText}<br>semua kelas & waktu yang diajar.</p></div>`;
     return;
   }
 
   const results = [];
-  for (const [className, days] of Object.entries(TIMETABLE)) {
+  const classes = selectedKelas ? [selectedKelas] : Object.keys(TIMETABLE);
+  for (const className of classes) {
+    const days = TIMETABLE[className];
+    if (!days) continue;
     for (const [day, periods] of Object.entries(days)) {
       for (const [periodNum, info] of Object.entries(periods)) {
         if (info.teacher && info.teacher.toUpperCase().includes(query)) {
@@ -594,7 +598,7 @@ function searchGuru() {
       <div class="empty-state">
         <div class="emoji">🔍</div>
         <h3>Tiada Keputusan</h3>
-        <p>Guru "<strong>${query}</strong>" tidak dijumpai.<br>Cuba nama lain atau singkatan berbeza.</p>
+        <p>Guru "<strong>${query}</strong>" tidak dijumpai${selectedKelas ? ` dalam kelas <strong>${selectedKelas}</strong>` : ''}.<br>Cuba nama lain atau singkatan berbeza.</p>
       </div>`;
     return;
   }
@@ -608,7 +612,7 @@ function searchGuru() {
   });
 
   el.innerHTML = `
-    <div class="results-count">Dijumpai <strong>${results.length}</strong> slot bagi guru "${query}"</div>
+    <div class="results-count">Dijumpai <strong>${results.length}</strong> slot${selectedKelas ? ` untuk kelas <strong>${selectedKelas}</strong>` : ''} bagi guru "${query}"</div>
     <div class="guru-results scroll-results">
       ${results.map(r => {
         const subjFull = SUBJECT_MAP[r.subject] || r.subject;
