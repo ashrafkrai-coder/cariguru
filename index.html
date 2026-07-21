@@ -188,8 +188,8 @@
     color: #1A1A2E;
   }
   .period-btn:hover:not(.active) { border-color: var(--gold); color: var(--navy); }
-  .period-num { font-size: 15px; }
-  .period-time { font-size: 9px; font-weight: 500; color: inherit; opacity: 0.75; }
+  .period-num { font-size: 16px; }
+  .period-time { font-size: 11px; font-weight: 700; color: inherit; opacity: 0.85; }
 
   /* ── RESULT CARD ── */
   .result-card {
@@ -474,7 +474,7 @@ function init() {
   DAYS.forEach(d => {
     const btn = document.createElement('button');
     btn.className = 'day-btn';
-    btn.textContent = DAY_SHORT[d];
+    btn.textContent = d; // Show full day names
     btn.dataset.day = d;
     btn.onclick = () => selectDay(d);
     dayGrid.appendChild(btn);
