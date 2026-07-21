@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="theme-color" content="#0F4C75">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Cari Guru">
+<title>Cari Guru — SMK Taman Medan</title>
+
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon.svg" type="image/svg+xml">
+
+<style>
+  :root {
+    --navy:    #0F4C75;
+    --teal:    #1B7A8A;
+    --gold:    #F5A623;
+    --cream:   #F8F5EF;
+    --white:   #FFFFFF;
+    --grey:    #6B7280;
+    --light:   #E8F0FE;
+    --card:    #FFFFFF;
+    --text:    #1A1A2E;
+    --subtext: #4A5568;
+    --border:  #DDE3EC;
+    --radius:  12px;
+    --shadow:  0 2px 12px rgba(15,76,117,0.10);
+    --shadow-lg: 0 8px 32px rgba(15,76,117,0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    min-height: 100dvh;
+    overflow-x: hidden;
+  }
+
+  /* ── HEADER ── */
+  header {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--teal) 100%);
+    padding: 20px 20px 28px;
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: var(--shadow-lg);
+  }
+  .header-school {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 4px;
+  }
+  .header-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: #fff;
+    letter-spacing: -0.5px;
+  }
+  .header-title span { color: var(--gold); }
+
+  /* ── TAB BAR ── */
+  .tabs {
+    display: flex;
+    margin: 0 20px;
+    margin-top: -14px;
+    background: var(--white);
+    border-radius: var(--radius);
+    padding: 4px;
+    box-shadow: var(--shadow);
+    gap: 4px;
+  }
+  .tab {
+    flex: 1; padding: 10px 4px;
+    background: transparent;
+    border: none; cursor: pointer;
+    border-radius: 8px;
+    font-size: 13px; font-weight: 600;
+    color: var(--grey);
+    transition: all 0.18s ease;
+    display: flex; flex-direction: column; align-items: center; gap: 3px;
+  }
+  .tab .tab-icon { font-size: 18px; }
+  .tab.active {
+    background: var(--navy);
+    color: var(--white);
+    box-shadow: 0 2px 8px rgba(15,76,117,0.3);
+  }
+
+  /* ── MAIN ── */
+  main { padding: 20px; max-width: 540px; margin: 0 auto; }
+
+  /* ── SECTION ── */
+  .section { display: none; }
+  .section.active { display: block; }
+
+  /* ── LABEL ── */
+  .field-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    color: var(--grey);
+    margin-bottom: 8px;
+    padding-left: 2px;
+  }
+
+  /* ── SELECT ── */
+  .select-wrapper {
+    position: relative;
+    margin-bottom: 16px;
+  }
+  .select-wrapper::after {
+    content: '▾';
+    position: absolute; right: 14px; top: 50%;
+    transform: translateY(-50%);
+    color: var(--navy); font-size: 16px;
+    pointer-events: none;
+  }
+  select {
+    width: 100%;
+    padding: 14px 40px 14px 16px;
+    appearance: none;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text);
+    cursor: pointer;
+    transition: border-color 0.15s;
+    outline: none;
+  }
+  select:focus { border-color: var(--teal); }
+
+  /* ── HARI BUTTONS ── */
+  .day-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  .day-btn {
+    padding: 10px 4px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+    font-size: 12px; font-weight: 700;
+    color: var(--grey);
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+  }
+  .day-btn.active {
+    border-color: var(--navy);
+    background: var(--navy);
+    color: var(--white);
+  }
+  .day-btn:hover:not(.active) { border-color: var(--teal); color: var(--teal); }
+
+  /* ── WAKTU GRID ── */
+  .period-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .period-btn {
+    padding: 10px 4px;
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+    font-size: 13px; font-weight: 700;
+    color: var(--grey);
+    cursor: pointer;
+    transition: all 0.15s;
+    text-align: center;
+    line-height: 1.3;
+  }
+  .period-btn.active {
+    border-color: var(--gold);
+    background: var(--gold);
+    color: #1A1A2E;
+  }
+  .period-btn:hover:not(.active) { border-color: var(--gold); color: var(--navy); }
+  .period-num { font-size: 15px; }
+  .period-time { font-size: 9px; font-weight: 500; color: inherit; opacity: 0.75; }
+
+  /* ── RESULT CARD ── */
+  .result-card {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 0;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    animation: slideUp 0.25s ease;
+  }
+  @keyframes slideUp {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  .result-header {
+    background: linear-gradient(135deg, var(--navy), var(--teal));
+    padding: 16px 20px;
+    display: flex; justify-content: space-between; align-items: flex-start;
+  }
+  .result-class { font-size: 13px; color: rgba(255,255,255,0.75); font-weight: 500; }
+  .result-period { text-align: right; }
+  .result-period-num { font-size: 28px; font-weight: 800; color: var(--gold); line-height: 1; }
+  .result-period-label { font-size: 10px; color: rgba(255,255,255,0.6); text-transform: uppercase; letter-spacing: 1px; }
+  .result-time-badge {
+    margin-top: 6px;
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 12px; color: rgba(255,255,255,0.9); font-weight: 500;
+  }
+  .result-body { padding: 20px; }
+  .result-subject {
+    font-size: 26px; font-weight: 800;
+    color: var(--navy); letter-spacing: -0.5px;
+    line-height: 1.1;
+  }
+  .result-subject-full {
+    font-size: 13px; color: var(--grey);
+    margin-top: 2px; margin-bottom: 16px;
+  }
+  .result-teacher-row {
+    display: flex; align-items: center; gap: 10px;
+    background: var(--light);
+    border-radius: 10px; padding: 14px 16px;
+  }
+  .teacher-icon {
+    width: 40px; height: 40px;
+    background: var(--navy);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .teacher-name { font-size: 16px; font-weight: 700; color: var(--navy); }
+  .teacher-label { font-size: 11px; color: var(--grey); text-transform: uppercase; letter-spacing: 0.8px; }
+  .no-teacher { color: var(--grey); font-size: 13px; font-style: italic; }
+
+  /* ── EMPTY STATE ── */
+  .empty-state {
+    text-align: center; padding: 48px 20px;
+    background: var(--white); border-radius: 16px;
+    box-shadow: var(--shadow);
+  }
+  .empty-state .emoji { font-size: 48px; }
+  .empty-state h3 { font-size: 18px; font-weight: 700; margin: 12px 0 6px; color: var(--navy); }
+  .empty-state p { font-size: 14px; color: var(--grey); line-height: 1.6; }
+
+  /* ── PROMPT STATE ── */
+  .prompt-state {
+    text-align: center; padding: 32px 16px;
+  }
+  .prompt-state .emoji { font-size: 40px; }
+  .prompt-state p { font-size: 14px; color: var(--grey); margin-top: 10px; }
+
+  /* ── SEARCH BOX ── */
+  .search-wrapper {
+    position: relative; margin-bottom: 16px;
+  }
+  .search-icon {
+    position: absolute; left: 14px; top: 50%;
+    transform: translateY(-50%); font-size: 16px;
+    color: var(--grey); pointer-events: none;
+  }
+  input[type="text"] {
+    width: 100%; padding: 14px 14px 14px 44px;
+    border: 2px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    font-size: 16px; font-weight: 500;
+    color: var(--text); outline: none;
+    transition: border-color 0.15s;
+  }
+  input[type="text"]:focus { border-color: var(--teal); }
+  input[type="text"]::placeholder { color: #AAB4C0; }
+
+  /* ── GURU RESULT LIST ── */
+  .guru-results { display: flex; flex-direction: column; gap: 10px; }
+  .guru-card {
+    background: var(--white); border-radius: var(--radius);
+    padding: 14px 16px;
+    box-shadow: var(--shadow);
+    display: flex; gap: 12px; align-items: flex-start;
+    animation: slideUp 0.2s ease;
+    cursor: default;
+  }
+  .guru-card-day {
+    background: var(--navy); color: var(--white);
+    border-radius: 8px; padding: 6px 10px;
+    font-size: 11px; font-weight: 700; text-align: center;
+    min-width: 48px; flex-shrink: 0;
+  }
+  .guru-card-day-short { font-size: 14px; }
+  .guru-card-info { flex: 1; }
+  .guru-card-subject { font-size: 16px; font-weight: 800; color: var(--navy); }
+  .guru-card-class { font-size: 12px; color: var(--grey); margin-top: 2px; }
+  .guru-card-meta {
+    display: flex; gap: 8px; margin-top: 6px; flex-wrap: wrap;
+  }
+  .badge {
+    font-size: 11px; font-weight: 600;
+    padding: 3px 8px; border-radius: 20px;
+  }
+  .badge-period { background: var(--light); color: var(--navy); }
+  .badge-time { background: #FFF3E0; color: #E65100; }
+
+  .results-count {
+    font-size: 12px; color: var(--grey);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+
+  /* ── SCROLLABLE RESULTS ── */
+  .scroll-results { max-height: 65dvh; overflow-y: auto; }
+  .scroll-results::-webkit-scrollbar { width: 4px; }
+  .scroll-results::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  /* ── SECTION HEADER ── */
+  .section-heading {
+    font-size: 18px; font-weight: 800;
+    color: var(--navy); margin-bottom: 6px;
+  }
+  .section-sub {
+    font-size: 13px; color: var(--grey); margin-bottom: 20px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-school">SMK Taman Medan · PJ, Selangor</div>
+  <div class="header-title">Cari <span>Guru</span></div>
+</header>
+
+<div class="tabs">
+  <button class="tab active" onclick="switchTab('kelas')">
+    <span class="tab-icon">🏫</span>
+    <span>Ikut Kelas</span>
+  </button>
+  <button class="tab" onclick="switchTab('guru')">
+    <span class="tab-icon">👩‍🏫</span>
+    <span>Ikut Guru</span>
+  </button>
+</div>
+
+<main>
+
+  <!-- ══ TAB: CARI IKUT KELAS ══ -->
+  <div class="section active" id="tab-kelas">
+    <div style="height:20px"></div>
+
+    <div class="field-label">Pilih Kelas</div>
+    <div class="select-wrapper">
+      <select id="sel-kelas" onchange="onKelasChange()">
+        <option value="">-- Pilih kelas --</option>
+      </select>
+    </div>
+
+    <div class="field-label">Pilih Hari</div>
+    <div class="day-grid" id="day-grid"></div>
+
+    <div class="field-label">Pilih Waktu</div>
+    <div class="period-grid" id="period-grid">
+      <div style="color:var(--grey);font-size:13px;grid-column:1/-1">Pilih kelas & hari dahulu.</div>
+    </div>
+
+    <div id="result-kelas">
+      <div class="prompt-state">
+        <div class="emoji">🔍</div>
+        <p>Pilih kelas, hari dan waktu<br>untuk lihat maklumat guru.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TAB: CARI IKUT GURU ══ -->
+  <div class="section" id="tab-guru">
+    <div style="height:20px"></div>
+    <div class="section-heading">Cari Jadual Guru</div>
+    <div class="section-sub">Taip nama (atau singkatan) guru</div>
+
+    <div class="search-wrapper">
+      <span class="search-icon">🔎</span>
+      <input type="text" id="guru-search" placeholder="cth: FATHUL, PREMA, SYAMIMI…"
+        oninput="searchGuru()" autocomplete="off" autocorrect="off" autocapitalize="characters">
+    </div>
+
+    <div id="result-guru">
+      <div class="prompt-state">
+        <div class="emoji">👩‍🏫</div>
+        <p>Taip nama guru untuk cari<br>semua kelas & waktu yang diajar.</p>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<script>
+// ═══════════════════════════════════════════
+//  DATA
+// ═══════════════════════════════════════════
+let TIMETABLE = {};
+
+const SUBJECT_MAP = {"BM":"Bahasa Melayu","BI":"Bahasa Inggeris","MAT":"Matematik","SN":"Sains","SEJ":"Sejarah","GEO":"Geografi","PI":"Pendidikan Islam","PM":"Pendidikan Moral","PJPK":"Pend. Jasmani & Kesihatan","RBT":"Reka Bentuk & Teknologi","KKQ":"Kemahiran Kelas Al-Quran","IQ":"Int. Al-Quran","BA":"Bahasa Arab","PS":"Pend. Seni Visual","P":"Perhimpunan","YAS":"Yasin","IBM":"Int. Bahasa Melayu","IPAI":"Int. PAI","KIM":"Kimia","FIZ":"Fizik","BIO":"Biologi","AM":"Matematik Tambahan","KAT":"Katering","TS":"Tasawwur Islam","PSS":"Pusat Sumber Sekolah","L":"PJPK (Lelaki)","PA":"Perakaunan","PT":"Perniagaan & Teknologi","PERN":"Perniagaan","EKON":"Ekonomi","SRT":"Seni Reka Tangan","BJ":"Bahasa Jepun","MK":"Muzik","EST":"EST","IB":"Int. Bahasa","MF":"Muzik","IBM":"Int. Bahasa Melayu","BMSK":"BM Syarahan/Koridor"};
+
+const DAYS = ['Isnin','Selasa','Rabu','Khamis','Jumaat'];
+const DAY_SHORT = {'Isnin':'Isn','Selasa':'Sel','Rabu':'Rab','Khamis':'Kha','Jumaat':'Jum'};
+
+// ═══════════════════════════════════════════
+//  STATE
+// ═══════════════════════════════════════════
+let selectedKelas = '';
+let selectedDay   = '';
+let selectedPeriod = '';
+
+// ═══════════════════════════════════════════
+//  INIT
+// ═══════════════════════════════════════════
+function init() {
+  // Populate kelas dropdown
+  const sel = document.getElementById('sel-kelas');
+  sel.innerHTML = '<option value="">-- Pilih kelas --</option>';
+  const classes = Object.keys(TIMETABLE).sort((a,b) => {
+    const [an, aname] = a.split(' ');
+    const [bn, bname] = b.split(' ');
+    return parseInt(an) - parseInt(bn) || aname.localeCompare(bname);
+  });
+  classes.forEach(c => {
+    const opt = document.createElement('option');
+    opt.value = c; opt.textContent = c;
+    sel.appendChild(opt);
+  });
+
+  // Render day buttons
+  const dayGrid = document.getElementById('day-grid');
+  DAYS.forEach(d => {
+    const btn = document.createElement('button');
+    btn.className = 'day-btn';
+    btn.textContent = DAY_SHORT[d];
+    btn.dataset.day = d;
+    btn.onclick = () => selectDay(d);
+    dayGrid.appendChild(btn);
+  });
+}
+
+// ═══════════════════════════════════════════
+//  TAB SWITCH
+// ═══════════════════════════════════════════
+function switchTab(tab) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('tab-'+tab).classList.add('active');
+  event.currentTarget.classList.add('active');
+  if (tab === 'guru') document.getElementById('guru-search').focus();
+}
+
+// ═══════════════════════════════════════════
+//  KELAS TAB
+// ═══════════════════════════════════════════
+function onKelasChange() {
+  selectedKelas = document.getElementById('sel-kelas').value;
+  selectedDay   = '';
+  selectedPeriod = '';
+  // Reset day buttons
+  document.querySelectorAll('.day-btn').forEach(b => b.classList.remove('active'));
+  renderPeriodGrid([]);
+  showResultKelas(null);
+}
+
+function selectDay(day) {
+  if (!selectedKelas) return;
+  selectedDay = day;
+  selectedPeriod = '';
+  document.querySelectorAll('.day-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.day === day);
+  });
+  const dayData = TIMETABLE[selectedKelas]?.[day] || {};
+  const periods = Object.keys(dayData).map(Number).sort((a,b) => a-b);
+  renderPeriodGrid(periods.map(p => ({ num: p, time: dayData[p].time })));
+  showResultKelas(null);
+}
+
+function renderPeriodGrid(periods) {
+  const grid = document.getElementById('period-grid');
+  grid.innerHTML = '';
+  if (!periods.length) {
+    grid.innerHTML = '<div style="color:var(--grey);font-size:13px;grid-column:1/-1">' +
+      (selectedKelas && selectedDay ? '⚠️ Tiada jadual untuk hari ini.' : 'Pilih kelas & hari dahulu.') +
+      '</div>';
+    return;
+  }
+  periods.forEach(({ num, time }) => {
+    const btn = document.createElement('button');
+    btn.className = 'period-btn';
+    btn.dataset.period = num;
+    const timeStr = time ? time.replace(' - ', '\n') : '';
+    btn.innerHTML = `<div class="period-num">W${num}</div><div class="period-time">${timeStr}</div>`;
+    btn.onclick = () => selectPeriod(num);
+    grid.appendChild(btn);
+  });
+}
+
+function selectPeriod(period) {
+  selectedPeriod = period;
+  document.querySelectorAll('.period-btn').forEach(b => {
+    b.classList.toggle('active', parseInt(b.dataset.period) === period);
+  });
+  const entry = TIMETABLE[selectedKelas]?.[selectedDay]?.[period];
+  showResultKelas(entry ? { period, ...entry } : null);
+}
+
+function showResultKelas(data) {
+  const el = document.getElementById('result-kelas');
+  if (!data) {
+    el.innerHTML = '<div class="prompt-state"><div class="emoji">🔍</div><p>Pilih kelas, hari dan waktu<br>untuk lihat maklumat guru.</p></div>';
+    return;
+  }
+  const subjFull = SUBJECT_MAP[data.subject] || data.subject;
+  const teacherHtml = data.teacher
+    ? `<div class="teacher-icon">👤</div>
+       <div><div class="teacher-label">Guru</div><div class="teacher-name">${data.teacher}</div></div>`
+    : `<div class="teacher-icon">❓</div><div class="no-teacher">Maklumat guru tidak tersedia dalam data</div>`;
+
+  el.innerHTML = `
+    <div class="result-card">
+      <div class="result-header">
+        <div>
+          <div class="result-class">📚 ${selectedKelas} &nbsp;·&nbsp; ${selectedDay}</div>
+          <div class="result-time-badge">🕐 ${data.time || '—'}</div>
+        </div>
+        <div class="result-period">
+          <div class="result-period-num">W${data.period}</div>
+          <div class="result-period-label">Waktu</div>
+        </div>
+      </div>
+      <div class="result-body">
+        <div class="result-subject">${data.subject}</div>
+        <div class="result-subject-full">${subjFull}</div>
+        <div class="result-teacher-row">${teacherHtml}</div>
+      </div>
+    </div>`;
+}
+
+// ═══════════════════════════════════════════
+//  GURU SEARCH TAB
+// ═══════════════════════════════════════════
+function searchGuru() {
+  const query = document.getElementById('guru-search').value.trim().toUpperCase();
+  const el = document.getElementById('result-guru');
+
+  if (query.length < 2) {
+    el.innerHTML = '<div class="prompt-state"><div class="emoji">👩‍🏫</div><p>Taip nama guru untuk cari<br>semua kelas & waktu yang diajar.</p></div>';
+    return;
+  }
+
+  const results = [];
+  for (const [className, days] of Object.entries(TIMETABLE)) {
+    for (const [day, periods] of Object.entries(days)) {
+      for (const [periodNum, info] of Object.entries(periods)) {
+        if (info.teacher && info.teacher.toUpperCase().includes(query)) {
+          results.push({ className, day, period: parseInt(periodNum), ...info });
+        }
+      }
+    }
+  }
+
+  if (!results.length) {
+    el.innerHTML = `
+      <div class="empty-state">
+        <div class="emoji">🔍</div>
+        <h3>Tiada Keputusan</h3>
+        <p>Guru "<strong>${query}</strong>" tidak dijumpai.<br>Cuba nama lain atau singkatan berbeza.</p>
+      </div>`;
+    return;
+  }
+
+  // Sort by class, day, period
+  const dayOrder = {'Isnin':0,'Selasa':1,'Rabu':2,'Khamis':3,'Jumaat':4};
+  results.sort((a,b) => {
+    if (a.className !== b.className) return a.className.localeCompare(b.className);
+    if (a.day !== b.day) return dayOrder[a.day] - dayOrder[b.day];
+    return a.period - b.period;
+  });
+
+  el.innerHTML = `
+    <div class="results-count">Dijumpai <strong>${results.length}</strong> slot bagi guru "${query}"</div>
+    <div class="guru-results scroll-results">
+      ${results.map(r => {
+        const subjFull = SUBJECT_MAP[r.subject] || r.subject;
+        return `
+          <div class="guru-card">
+            <div class="guru-card-day">
+              <div class="guru-card-day-short">${DAY_SHORT[r.day]}</div>
+            </div>
+            <div class="guru-card-info">
+              <div class="guru-card-subject">${r.subject} <small style="font-weight:400;font-size:12px;color:var(--grey)">· ${subjFull}</small></div>
+              <div class="guru-card-class">📚 ${r.className}</div>
+              <div class="guru-card-meta">
+                <span class="badge badge-period">Waktu ${r.period}</span>
+                <span class="badge badge-time">🕐 ${r.time || '—'}</span>
+              </div>
+            </div>
+          </div>`;
+      }).join('')}
+    </div>`;
+}
+
+// ═══════════════════════════════════════════
+//  SERVICE WORKER (PWA offline)
+// ═══════════════════════════════════════════
+if ('serviceWorker' in navigator) {
+  const swCode = `
+    const CACHE = 'cari-guru-v1';
+    self.addEventListener('install', e => {
+      e.waitUntil(caches.open(CACHE).then(c => c.addAll(['/'])));
+      self.skipWaiting();
+    });
+    self.addEventListener('fetch', e => {
+      e.respondWith(caches.match(e.request).then(r => r || fetch(e.request)));
+    });
+  `;
+  const blob = new Blob([swCode], {type:'application/javascript'});
+  const swUrl = URL.createObjectURL(blob);
+  navigator.serviceWorker.register(swUrl).catch(() => {});
+}
+
+
+async function loadData() {
+  try {
+    const res = await fetch('jadual.json');
+    TIMETABLE = await res.json();
+  } catch (e) {
+    console.error('Gagal memuat jadual.json', e);
+  }
+  init();
+}
+loadData();
+</script>
+</body>
+</html>
