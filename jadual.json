@@ -1,221 +1,339 @@
 ﻿{
-  "1 AL-FARABI": {
-    "Isnin": {
-      "1": {"subject": "P", "teacher": "MAYSARAH", "time": "7:30 - 8:00"},
-      "2": {"subject": "BM", "teacher": "AZIAH", "time": "8:00 - 8:30"},
-      "3": {"subject": "BM", "teacher": "AZIAH", "time": "8:30 - 9:00"},
-      "4": {"subject": "GEO", "teacher": "ABDUL", "time": "9:00 - 9:30"},
-      "5": {"subject": "GEO", "teacher": "ABDUL", "time": "9:30 - 10:00"},
-      "7": {"subject": "BI", "teacher": "FATIN R", "time": "10:20 - 10:50"},
-      "8": {"subject": "BI", "teacher": "FATIN R", "time": "10:50 - 11:20"},
-      "9": {"subject": "RBT", "teacher": "MUNAIZAH", "time": "11:20 - 11:50"},
-      "10": {"subject": "RBT", "teacher": "MUNAIZAH", "time": "11:50 - 12:20"},
-      "11": {"subject": "PI", "teacher": "MAYSARAH", "time": "12:20 - 12:50"},
-      "12": {"subject": "PI", "teacher": "MAYSARAH", "time": "12:50 - 13:20"},
-      "13": {"subject": "BA", "teacher": "ATIQAH", "time": "13:20 - 13:50"},
-      "14": {"subject": "BA", "teacher": "ATIQAH", "time": "13:50 - 14:20"}
-    },
-    "Selasa": {
-      "1": {"subject": "BI", "teacher": "FATIN R", "time": "7:30 - 8:00"},
-      "2": {"subject": "BI", "teacher": "FATIN R", "time": "8:00 - 8:30"},
-      "3": {"subject": "GEO", "teacher": "ABDUL", "time": "8:30 - 9:00"},
-      "4": {"subject": "KKQ", "teacher": "ASHRAF", "time": "9:00 - 9:30"},
-      "5": {"subject": "KKQ", "teacher": "ASHRAF", "time": "9:30 - 10:00"},
-      "7": {"subject": "SN", "teacher": "AINI", "time": "10:20 - 10:50"},
-      "8": {"subject": "SN", "teacher": "AINI", "time": "10:50 - 11:20"},
-      "9": {"subject": "BA", "teacher": "ATIQAH", "time": "11:20 - 11:50"},
-      "10": {"subject": "BA", "teacher": "ATIQAH", "time": "11:50 - 12:20"},
-      "11": {"subject": "PS", "teacher": "FATIN B", "time": "12:20 - 12:50"},
-      "12": {"subject": "PS", "teacher": "FATIN B", "time": "12:50 - 13:20"},
-      "13": {"subject": "PI", "teacher": "MAYSARAH", "time": "13:20 - 13:50"},
-      "14": {"subject": "PI", "teacher": "MAYSARAH", "time": "13:50 - 14:20"}
-    },
-    "Rabu": {
-      "1": {"subject": "SN", "teacher": "AINI", "time": "7:30 - 8:00"},
-      "2": {"subject": "SN", "teacher": "AINI", "time": "8:00 - 8:30"},
-      "3": {"subject": "MAT", "teacher": "FATHUL / JAMSYIR", "time": "8:30 - 9:00"},
-      "4": {"subject": "MAT", "teacher": "FATHUL / JAMSYIR", "time": "9:00 - 9:30"},
-      "5": {"subject": "PI", "teacher": "MAYSARAH", "time": "9:30 - 10:00"},
-      "7": {"subject": "SEJ", "teacher": "HAFIZ", "time": "10:20 - 10:50"},
-      "8": {"subject": "SEJ", "teacher": "HAFIZ", "time": "10:50 - 11:20"},
-      "9": {"subject": "BM", "teacher": "AZIAH", "time": "11:20 - 11:50"},
-      "10": {"subject": "BM", "teacher": "AZIAH", "time": "11:50 - 12:20"},
-      "11": {"subject": "RBT", "teacher": "MUNAIZAH", "time": "12:20 - 12:50"},
-      "12": {"subject": "RBT", "teacher": "MUNAIZAH", "time": "12:50 - 13:20"},
-      "13": {"subject": "KKQ", "teacher": "ASHRAF", "time": "13:20 - 13:50"},
-      "14": {"subject": "KKQ", "teacher": "ASHRAF", "time": "13:50 - 14:20"}
-    },
-    "Khamis": {
-      "1": {"subject": "PJPK", "teacher": "ZAM", "time": "7:30 - 8:00"},
-      "2": {"subject": "PJPK", "teacher": "ZAM", "time": "8:00 - 8:30"},
-      "3": {"subject": "MAT", "teacher": "FATHUL / JAMSYIR", "time": "8:30 - 9:00"},
-      "4": {"subject": "MAT", "teacher": "FATHUL / JAMSYIR", "time": "9:00 - 9:30"},
-      "5": {"subject": "BM", "teacher": "AZIAH", "time": "9:30 - 10:00"},
-      "7": {"subject": "BI", "teacher": "FATIN R", "time": "10:20 - 10:50"},
-      "8": {"subject": "BI", "teacher": "FATIN R", "time": "10:50 - 11:20"},
-      "9": {"subject": "SN", "teacher": "AINI", "time": "11:20 - 11:50"},
-      "10": {"subject": "SN", "teacher": "AINI", "time": "11:50 - 12:20"},
-      "11": {"subject": "PI", "teacher": "MAYSARAH", "time": "12:20 - 12:50"},
-      "12": {"subject": "PI", "teacher": "MAYSARAH", "time": "12:50 - 13:20"},
-      "13": {"subject": "SEJ", "teacher": "HAFIZ", "time": "13:20 - 13:50"},
-      "14": {"subject": "SEJ", "teacher": "HAFIZ", "time": "13:50 - 14:20"}
-    },
-    "Jumaat": {
-      "1": {"subject": "YAS", "teacher": "FATIN B", "time": "7:30 - 8:00"},
-      "2": {"subject": "PJPK", "teacher": "ZAM", "time": "8:00 - 8:30"},
-      "3": {"subject": "PJPK", "teacher": "ZAM", "time": "8:30 - 9:00"},
-      "4": {"subject": "BM", "teacher": "AZIAH", "time": "9:00 - 9:30"},
-      "5": {"subject": "BM", "teacher": "AZIAH", "time": "9:30 - 10:00"},
-      "7": {"subject": "MAT", "teacher": "FATHUL / JAMSYIR", "time": "10:20 - 10:50"},
-      "8": {"subject": "MAT", "teacher": "FATHUL / JAMSYIR", "time": "10:50 - 11:20"},
-      "9": {"subject": "BA", "teacher": "ATIQAH", "time": "11:20 - 11:50"},
-      "10": {"subject": "BA", "teacher": "ATIQAH", "time": "11:50 - 12:20"}
-    }
-  },
-  "2 AL-FARABI": {
-    "Isnin": {
-      "1": {"subject": "P", "teacher": "SAKINAH", "time": "7:30 - 8:00"},
-      "2": {"subject": "GEO", "teacher": "SHARIFAH", "time": "8:00 - 8:30"},
-      "3": {"subject": "GEO", "teacher": "SHARIFAH", "time": "8:30 - 9:00"},
-      "4": {"subject": "BA", "teacher": "ATIQAH", "time": "9:00 - 9:30"},
-      "5": {"subject": "BA", "teacher": "ATIQAH", "time": "9:30 - 10:00"},
-      "7": {"subject": "PS", "teacher": "SYAMIMI", "time": "10:20 - 10:50"},
-      "8": {"subject": "PS", "teacher": "SYAMIMI", "time": "10:50 - 11:20"},
-      "9": {"subject": "PI", "teacher": "SAKINAH", "time": "11:20 - 11:50"},
-      "10": {"subject": "PI", "teacher": "SAKINAH", "time": "11:50 - 12:20"},
-      "11": {"subject": "RBT", "teacher": "JAMAL", "time": "12:20 - 12:50"},
-      "12": {"subject": "RBT", "teacher": "JAMAL", "time": "12:50 - 13:20"},
-      "13": {"subject": "KKQ", "teacher": "ASHRAF", "time": "13:20 - 13:50"},
-      "14": {"subject": "KKQ", "teacher": "ASHRAF", "time": "13:50 - 14:20"}
-    },
-    "Selasa": {
-      "1": {"subject": "SN", "teacher": "ASLINAWATI", "time": "7:30 - 8:00"},
-      "2": {"subject": "SN", "teacher": "ASLINAWATI", "time": "8:00 - 8:30"},
-      "3": {"subject": "BA", "teacher": "ATIQAH", "time": "8:30 - 9:00"},
-      "4": {"subject": "BA", "teacher": "ATIQAH", "time": "9:00 - 9:30"},
-      "5": {"subject": "BM", "teacher": "SYAZA SYAZWANI", "time": "9:30 - 10:00"},
-      "7": {"subject": "PI", "teacher": "SAKINAH", "time": "10:20 - 10:50"},
-      "8": {"subject": "PI", "teacher": "SAKINAH", "time": "10:50 - 11:20"},
-      "9": {"subject": "MAT", "teacher": "ZARINI", "time": "11:20 - 11:50"},
-      "10": {"subject": "MAT", "teacher": "ZARINI", "time": "11:50 - 12:20"},
-      "11": {"subject": "BI", "teacher": "LAILA", "time": "12:20 - 12:50"},
-      "12": {"subject": "BI", "teacher": "LAILA", "time": "12:50 - 13:20"},
-      "13": {"subject": "KKQ", "teacher": "ASHRAF", "time": "13:20 - 13:50"},
-      "14": {"subject": "KKQ", "teacher": "ASHRAF", "time": "13:50 - 14:20"}
-    },
-    "Rabu": {
-      "1": {"subject": "BA", "teacher": "ATIQAH", "time": "7:30 - 8:00"},
-      "2": {"subject": "BA", "teacher": "ATIQAH", "time": "8:00 - 8:30"},
-      "3": {"subject": "PJPK", "teacher": "WANA", "time": "8:30 - 9:00"},
-      "4": {"subject": "PJPK", "teacher": "WANA", "time": "9:00 - 9:30"},
-      "5": {"subject": "PI", "teacher": "SAKINAH", "time": "9:30 - 10:00"},
-      "7": {"subject": "BM", "teacher": "SYAZA / SYAZWANI", "time": "10:20 - 10:50"},
-      "8": {"subject": "BM", "teacher": "SYAZA / SYAZWANI", "time": "10:50 - 11:20"},
-      "9": {"subject": "SN", "teacher": "ASLINAWATI", "time": "11:20 - 11:50"},
-      "10": {"subject": "SN", "teacher": "ASLINAWATI", "time": "11:50 - 12:20"},
-      "11": {"subject": "SEJ", "teacher": "HAFIZ", "time": "12:20 - 12:50"},
-      "12": {"subject": "SEJ", "teacher": "HAFIZ", "time": "12:50 - 13:20"},
-      "13": {"subject": "BI", "teacher": "LAILA", "time": "13:20 - 13:50"},
-      "14": {"subject": "BI", "teacher": "LAILA", "time": "13:50 - 14:20"}
-    },
-    "Khamis": {
-      "1": {"subject": "GEO", "teacher": "SHARIFAH", "time": "7:30 - 8:00"},
-      "2": {"subject": "RBT", "teacher": "JAMAL", "time": "8:00 - 8:30"},
-      "3": {"subject": "RBT", "teacher": "JAMAL", "time": "8:30 - 9:00"},
-      "4": {"subject": "PJPK", "teacher": "WANA", "time": "9:00 - 9:30"},
-      "5": {"subject": "PJPK", "teacher": "WANA", "time": "9:30 - 10:00"},
-      "7": {"subject": "MAT", "teacher": "ZARINI", "time": "10:20 - 10:50"},
-      "8": {"subject": "MAT", "teacher": "ZARINI", "time": "10:50 - 11:20"},
-      "9": {"subject": "BM", "teacher": "SYAZA / SYAZWANI", "time": "11:20 - 11:50"},
-      "10": {"subject": "BM", "teacher": "SYAZA / SYAZWANI", "time": "11:50 - 12:20"},
-      "11": {"subject": "BI", "teacher": "LAILA", "time": "12:20 - 12:50"},
-      "12": {"subject": "BI", "teacher": "LAILA", "time": "12:50 - 13:20"},
-      "13": {"subject": "SN", "teacher": "ASLINAWATI", "time": "13:20 - 13:50"},
-      "14": {"subject": "SN", "teacher": "ASLINAWATI", "time": "13:50 - 14:20"}
-    },
-    "Jumaat": {
-      "1": {"subject": "YAS", "teacher": "ZARINI", "time": "7:30 - 8:00"},
-      "2": {"subject": "PI", "teacher": "SAKINAH", "time": "8:00 - 8:30"},
-      "3": {"subject": "PI", "teacher": "SAKINAH", "time": "8:30 - 9:00"},
-      "4": {"subject": "MAT", "teacher": "ZARINI", "time": "9:00 - 9:30"},
-      "5": {"subject": "MAT", "teacher": "ZARINI", "time": "9:30 - 10:00"},
-      "7": {"subject": "BM", "teacher": "SYAZA / SYAZWANI", "time": "10:20 - 10:50"},
-      "8": {"subject": "BM", "teacher": "SYAZA / SYAZWANI", "time": "10:50 - 11:20"},
-      "9": {"subject": "SEJ", "teacher": "HAFIZ", "time": "11:20 - 11:50"},
-      "10": {"subject": "SEJ", "teacher": "HAFIZ", "time": "11:50 - 12:20"}
-    }
-  },
-  "3 AL-FARABI": {
-    "Isnin": {
-      "1": {"subject": "P", "teacher": "ATIQAH", "time": "7:30 - 8:00"},
-      "2": {"subject": "BM", "teacher": "ANA ISA", "time": "8:00 - 8:30"},
-      "3": {"subject": "BM", "teacher": "ANA ISA", "time": "8:30 - 9:00"},
-      "4": {"subject": "PI", "teacher": "MAYSARAH", "time": "9:00 - 9:30"},
-      "5": {"subject": "PI", "teacher": "MAYSARAH", "time": "9:30 - 10:00"},
-      "7": {"subject": "SN", "teacher": "ZAM", "time": "10:20 - 10:50"},
-      "8": {"subject": "SN", "teacher": "ZAM", "time": "10:50 - 11:20"},
-      "9": {"subject": "MAT", "teacher": "SARAH", "time": "11:20 - 11:50"},
-      "10": {"subject": "MAT", "teacher": "SARAH", "time": "11:50 - 12:20"},
-      "11": {"subject": "GEO", "teacher": "ANA NUDIN", "time": "12:20 - 12:50"},
-      "12": {"subject": "GEO", "teacher": "ANA NUDIN", "time": "12:50 - 13:20"},
-      "13": {"subject": "BI", "teacher": "LAILA", "time": "13:20 - 13:50"},
-      "14": {"subject": "BI", "teacher": "LAILA", "time": "13:50 - 14:20"}
-    },
-    "Selasa": {
-      "1": {"subject": "PJPK", "teacher": "FATIMAH", "time": "7:30 - 8:00"},
-      "2": {"subject": "PJPK", "teacher": "FATIMAH", "time": "8:00 - 8:30"},
-      "3": {"subject": "MAT", "teacher": "SARAH", "time": "8:30 - 9:00"},
-      "4": {"subject": "MAT", "teacher": "SARAH", "time": "9:00 - 9:30"},
-      "5": {"subject": "BM", "teacher": "ANA ISA", "time": "9:30 - 10:00"},
-      "7": {"subject": "BA", "teacher": "ATIQAH", "time": "10:20 - 10:50"},
-      "8": {"subject": "BA", "teacher": "ATIQAH", "time": "10:50 - 11:20"},
-      "9": {"subject": "SN", "teacher": "ZAM", "time": "11:20 - 11:50"},
-      "10": {"subject": "SN", "teacher": "ZAM", "time": "11:50 - 12:20"},
-      "11": {"subject": "PI", "teacher": "MAYSARAH", "time": "12:20 - 12:50"},
-      "12": {"subject": "PI", "teacher": "MAYSARAH", "time": "12:50 - 13:20"},
-      "13": {"subject": "RBT", "teacher": "JAMAL", "time": "13:20 - 13:50"},
-      "14": {"subject": "RBT", "teacher": "JAMAL", "time": "13:50 - 14:20"}
-    },
-    "Rabu": {
-      "1": {"subject": "PS", "teacher": "AQILLA", "time": "7:30 - 8:00"},
-      "2": {"subject": "PS", "teacher": "AQILLA", "time": "8:00 - 8:30"},
-      "3": {"subject": "GEO", "teacher": "ANA NUDIN", "time": "8:30 - 9:00"},
-      "4": {"subject": "BM", "teacher": "ANA ISA", "time": "9:00 - 9:30"},
-      "5": {"subject": "BM", "teacher": "ANA ISA", "time": "9:30 - 10:00"},
-      "7": {"subject": "KKQ", "teacher": "ASHRAF", "time": "10:20 - 10:50"},
-      "8": {"subject": "KKQ", "teacher": "ASHRAF", "time": "10:50 - 11:20"},
-      "9": {"subject": "BI", "teacher": "LAILA", "time": "11:20 - 11:50"},
-      "10": {"subject": "BI", "teacher": "LAILA", "time": "11:50 - 12:20"},
-      "11": {"subject": "MAT", "teacher": "SARAH", "time": "12:20 - 12:50"},
-      "12": {"subject": "MAT", "teacher": "SARAH", "time": "12:50 - 13:20"},
-      "13": {"subject": "PI", "teacher": "MAYSARAH", "time": "13:20 - 13:50"},
-      "14": {"subject": "PI", "teacher": "MAYSARAH", "time": "13:50 - 14:20"}
-    },
-    "Khamis": {
-      "1": {"subject": "SEJ", "teacher": "PEER", "time": "7:30 - 8:00"},
-      "2": {"subject": "SEJ", "teacher": "PEER", "time": "8:00 - 8:30"},
-      "3": {"subject": "PI", "teacher": "MAYSARAH", "time": "8:30 - 9:00"},
-      "4": {"subject": "PJPK", "teacher": "FATIMAH", "time": "9:00 - 9:30"},
-      "5": {"subject": "PJPK", "teacher": "FATIMAH", "time": "9:30 - 10:00"},
-      "7": {"subject": "BM", "teacher": "ANA ISA", "time": "10:20 - 10:50"},
-      "8": {"subject": "BM", "teacher": "ANA ISA", "time": "10:50 - 11:20"},
-      "9": {"subject": "SN", "teacher": "ZAM", "time": "11:20 - 11:50"},
-      "10": {"subject": "SN", "teacher": "ZAM", "time": "11:50 - 12:20"},
-      "11": {"subject": "BA", "teacher": "ATIQAH", "time": "12:20 - 12:50"},
-      "12": {"subject": "BA", "teacher": "ATIQAH", "time": "12:50 - 13:20"},
-      "13": {"subject": "KKQ", "teacher": "ASHRAF", "time": "13:20 - 13:50"},
-      "14": {"subject": "KKQ", "teacher": "ASHRAF", "time": "13:50 - 14:20"}
-    },
-    "Jumaat": {
-      "1": {"subject": "YAS", "teacher": "ATIQAH", "time": "7:30 - 8:00"},
-      "2": {"subject": "BI", "teacher": "LAILA", "time": "8:00 - 8:30"},
-      "3": {"subject": "BI", "teacher": "LAILA", "time": "8:30 - 9:00"},
-      "4": {"subject": "BA", "teacher": "ATIQAH", "time": "9:00 - 9:30"},
-      "5": {"subject": "BA", "teacher": "ATIQAH", "time": "9:30 - 10:00"},
-      "7": {"subject": "RBT", "teacher": "JAMAL", "time": "10:20 - 10:50"},
-      "8": {"subject": "RBT", "teacher": "JAMAL", "time": "10:50 - 11:20"},
-      "9": {"subject": "SEJ", "teacher": "PEER", "time": "11:20 - 11:50"},
-      "10": {"subject": "SEJ", "teacher": "PEER", "time": "11:50 - 12:20"}
-    }
-  }
+    "3 AL-FARABI":  {
+                        "Rabu":  {
+                                     "3":  {
+                                               "subject":  "SEJ",
+                                               "time":  "8:30 - 9:00",
+                                               "teacher":  "KAMAL"
+                                           },
+                                     "5":  {
+                                               "subject":  "BI",
+                                               "time":  "9:30 - 10:00",
+                                               "teacher":  "LAILA"
+                                           },
+                                     "12":  {
+                                                "subject":  "ICT",
+                                                "time":  "13:20 - 13:50",
+                                                "teacher":  "ZUL"
+                                            },
+                                     "10":  {
+                                                "subject":  "PA",
+                                                "time":  "12:20 - 12:50",
+                                                "teacher":  "DIN"
+                                            },
+                                     "2":  {
+                                               "subject":  "MAT",
+                                               "time":  "8:00 - 8:30",
+                                               "teacher":  "AHMAD"
+                                           },
+                                     "8":  {
+                                               "subject":  "BM",
+                                               "time":  "11:20 - 11:50",
+                                               "teacher":  "FATIN A"
+                                           },
+                                     "11":  {
+                                                "subject":  "ICT",
+                                                "time":  "12:50 - 13:20",
+                                                "teacher":  "ZUL"
+                                            },
+                                     "1":  {
+                                               "subject":  "P",
+                                               "time":  "7:30 - 8:00",
+                                               "teacher":  "FAISAL"
+                                           },
+                                     "9":  {
+                                               "subject":  "PA",
+                                               "time":  "11:50 - 12:20",
+                                               "teacher":  "DIN"
+                                           },
+                                     "14":  {
+                                                "subject":  "BI",
+                                                "time":  "13:50 - 14:20",
+                                                "teacher":  "LAILA"
+                                            },
+                                     "7":  {
+                                               "subject":  "FIZ",
+                                               "time":  "10:50 - 11:20",
+                                               "teacher":  "HASAN"
+                                           },
+                                     "6":  {
+                                               "subject":  "PI",
+                                               "time":  "10:20 - 10:50",
+                                               "teacher":  "NURUL"
+                                           },
+                                     "4":  {
+                                               "subject":  "GEO",
+                                               "time":  "9:00 - 9:30",
+                                               "teacher":  "RINA"
+                                           },
+                                     "13":  {
+                                                "subject":  "MAT",
+                                                "time":  "13:50 - 14:20",
+                                                "teacher":  "AHMAD"
+                                            }
+                                 },
+                        "Selasa":  {
+                                       "3":  {
+                                                 "subject":  "PI",
+                                                 "time":  "8:30 - 9:00",
+                                                 "teacher":  "NURUL"
+                                             },
+                                       "5":  {
+                                                 "subject":  "BI",
+                                                 "time":  "9:30 - 10:00",
+                                                 "teacher":  "LAILA"
+                                             },
+                                       "12":  {
+                                                  "subject":  "PA",
+                                                  "time":  "13:20 - 13:50",
+                                                  "teacher":  "DIN"
+                                              },
+                                       "10":  {
+                                                  "subject":  "ICT",
+                                                  "time":  "12:20 - 12:50",
+                                                  "teacher":  "ZUL"
+                                              },
+                                       "2":  {
+                                                 "subject":  "BM",
+                                                 "time":  "8:00 - 8:30",
+                                                 "teacher":  "FATIN A"
+                                             },
+                                       "8":  {
+                                                 "subject":  "FIZ",
+                                                 "time":  "11:20 - 11:50",
+                                                 "teacher":  "HASAN"
+                                             },
+                                       "11":  {
+                                                  "subject":  "PA",
+                                                  "time":  "12:50 - 13:20",
+                                                  "teacher":  "DIN"
+                                              },
+                                       "1":  {
+                                                 "subject":  "P",
+                                                 "time":  "7:30 - 8:00",
+                                                 "teacher":  "FAISAL"
+                                             },
+                                       "9":  {
+                                                 "subject":  "ICT",
+                                                 "time":  "11:50 - 12:20",
+                                                 "teacher":  "ZUL"
+                                             },
+                                       "14":  {
+                                                  "subject":  "BI",
+                                                  "time":  "13:50 - 14:20",
+                                                  "teacher":  "LAILA"
+                                              },
+                                       "7":  {
+                                                 "subject":  "GEO",
+                                                 "time":  "10:50 - 11:20",
+                                                 "teacher":  "RINA"
+                                             },
+                                       "6":  {
+                                                 "subject":  "SEJ",
+                                                 "time":  "10:20 - 10:50",
+                                                 "teacher":  "KAMAL"
+                                             },
+                                       "4":  {
+                                                 "subject":  "MAT",
+                                                 "time":  "9:00 - 9:30",
+                                                 "teacher":  "AHMAD"
+                                             },
+                                       "13":  {
+                                                  "subject":  "BM",
+                                                  "time":  "13:50 - 14:20",
+                                                  "teacher":  "FATIN A"
+                                              }
+                                   },
+                        "Jumaat":  {
+                                       "7":  {
+                                                 "subject":  "GEO",
+                                                 "time":  "10:50 - 11:20",
+                                                 "teacher":  "RINA"
+                                             },
+                                       "9":  {
+                                                 "subject":  "PA",
+                                                 "time":  "11:50 - 12:20",
+                                                 "teacher":  "DIN"
+                                             },
+                                       "3":  {
+                                                 "subject":  "BI",
+                                                 "time":  "8:30 - 9:00",
+                                                 "teacher":  "LAILA"
+                                             },
+                                       "2":  {
+                                                 "subject":  "BM",
+                                                 "time":  "8:00 - 8:30",
+                                                 "teacher":  "FATIN A"
+                                             },
+                                       "1":  {
+                                                 "subject":  "YAS",
+                                                 "time":  "7:30 - 8:00",
+                                                 "teacher":  "AHMAD"
+                                             },
+                                       "4":  {
+                                                 "subject":  "PI",
+                                                 "time":  "9:00 - 9:30",
+                                                 "teacher":  "NURUL"
+                                             },
+                                       "6":  {
+                                                 "subject":  "SEJ",
+                                                 "time":  "10:20 - 10:50",
+                                                 "teacher":  "KAMAL"
+                                             },
+                                       "5":  {
+                                                 "subject":  "MAT",
+                                                 "time":  "9:30 - 10:00",
+                                                 "teacher":  "AHMAD"
+                                             },
+                                       "8":  {
+                                                 "subject":  "FIZ",
+                                                 "time":  "11:20 - 11:50",
+                                                 "teacher":  "HASAN"
+                                             }
+                                   },
+                        "Khamis":  {
+                                       "3":  {
+                                                 "subject":  "PI",
+                                                 "time":  "8:30 - 9:00",
+                                                 "teacher":  "NURUL"
+                                             },
+                                       "5":  {
+                                                 "subject":  "SEJ",
+                                                 "time":  "9:30 - 10:00",
+                                                 "teacher":  "KAMAL"
+                                             },
+                                       "12":  {
+                                                  "subject":  "BM",
+                                                  "time":  "13:20 - 13:50",
+                                                  "teacher":  "FATIN A"
+                                              },
+                                       "10":  {
+                                                  "subject":  "ICT",
+                                                  "time":  "12:20 - 12:50",
+                                                  "teacher":  "ZUL"
+                                              },
+                                       "2":  {
+                                                 "subject":  "BI",
+                                                 "time":  "8:00 - 8:30",
+                                                 "teacher":  "LAILA"
+                                             },
+                                       "8":  {
+                                                 "subject":  "PA",
+                                                 "time":  "11:20 - 11:50",
+                                                 "teacher":  "DIN"
+                                             },
+                                       "11":  {
+                                                  "subject":  "ICT",
+                                                  "time":  "12:50 - 13:20",
+                                                  "teacher":  "ZUL"
+                                              },
+                                       "1":  {
+                                                 "subject":  "BM",
+                                                 "time":  "7:30 - 8:00",
+                                                 "teacher":  "FATIN A"
+                                             },
+                                       "9":  {
+                                                 "subject":  "PA",
+                                                 "time":  "11:50 - 12:20",
+                                                 "teacher":  "DIN"
+                                             },
+                                       "14":  {
+                                                  "subject":  "BI",
+                                                  "time":  "13:50 - 14:20",
+                                                  "teacher":  "LAILA"
+                                              },
+                                       "7":  {
+                                                 "subject":  "FIZ",
+                                                 "time":  "10:50 - 11:20",
+                                                 "teacher":  "HASAN"
+                                             },
+                                       "6":  {
+                                                 "subject":  "GEO",
+                                                 "time":  "10:20 - 10:50",
+                                                 "teacher":  "RINA"
+                                             },
+                                       "4":  {
+                                                 "subject":  "MAT",
+                                                 "time":  "9:00 - 9:30",
+                                                 "teacher":  "AHMAD"
+                                             },
+                                       "13":  {
+                                                  "subject":  "BM",
+                                                  "time":  "13:50 - 14:20",
+                                                  "teacher":  "FATIN A"
+                                              }
+                                   },
+                        "Isnin":  {
+                                      "3":  {
+                                                "subject":  "BM",
+                                                "time":  "8:30 - 9:00",
+                                                "teacher":  "FATIN A"
+                                            },
+                                      "5":  {
+                                                "subject":  "MAT",
+                                                "time":  "9:30 - 10:00",
+                                                "teacher":  "AHMAD"
+                                            },
+                                      "12":  {
+                                                 "subject":  "FIZ",
+                                                 "time":  "13:20 - 13:50",
+                                                 "teacher":  "HASAN"
+                                             },
+                                      "10":  {
+                                                 "subject":  "GEO",
+                                                 "time":  "12:20 - 12:50",
+                                                 "teacher":  "RINA"
+                                             },
+                                      "2":  {
+                                                "subject":  "BM",
+                                                "time":  "8:00 - 8:30",
+                                                "teacher":  "FATIN A"
+                                            },
+                                      "8":  {
+                                                "subject":  "SEJ",
+                                                "time":  "11:20 - 11:50",
+                                                "teacher":  "KAMAL"
+                                            },
+                                      "11":  {
+                                                 "subject":  "GEO",
+                                                 "time":  "12:50 - 13:20",
+                                                 "teacher":  "RINA"
+                                             },
+                                      "1":  {
+                                                "subject":  "P",
+                                                "time":  "7:30 - 8:00",
+                                                "teacher":  "FAISAL"
+                                            },
+                                      "9":  {
+                                                "subject":  "SEJ",
+                                                "time":  "11:50 - 12:20",
+                                                "teacher":  "KAMAL"
+                                            },
+                                      "14":  {
+                                                 "subject":  "BI",
+                                                 "time":  "13:50 - 14:20",
+                                                 "teacher":  "LAILA"
+                                             },
+                                      "7":  {
+                                                "subject":  "BI",
+                                                "time":  "10:50 - 11:20",
+                                                "teacher":  "LAILA"
+                                            },
+                                      "6":  {
+                                                "subject":  "BI",
+                                                "time":  "10:20 - 10:50",
+                                                "teacher":  "LAILA"
+                                            },
+                                      "4":  {
+                                                "subject":  "PI",
+                                                "time":  "9:00 - 9:30",
+                                                "teacher":  "NURUL"
+                                            },
+                                      "13":  {
+                                                 "subject":  "FIZ",
+                                                 "time":  "13:50 - 14:20",
+                                                 "teacher":  "HASAN"
+                                             }
+                                  }
+                    }
 }
